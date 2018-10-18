@@ -1,0 +1,45 @@
+
+<!--======================================
+    Site Scripts
+======================================-->
+<script src="{{ asset '/plugins/jquery.js' }}"></script>
+<script src="{{ asset '/plugins/vue.js' }}"></script>
+<script src="{{ asset '/plugins/axios.min.js' }}"></script>
+<script src="{{ asset '/plugins/owl-carousel/owl.carousel.min.js' }}"></script>
+<script src="{{ asset '/plugins/purify.js' }}"></script>
+<script src="{{ asset '/plugins/isotope.min.js' }}"></script>
+<script src="{{ asset '/plugins/imagesloaded.pkgd.min.js' }}"></script>
+<script src="{{ asset '/plugins/moment.min.js' }}"></script>
+<script src="{{ asset '/plugins/magnific-popup/jquery.magnific-popup.min.js' }}"></script>
+
+{{#is "post, page"}}
+<script src="{{ asset '/plugins/highlight.min.js' }}"></script>
+<script src="{{ asset '/plugins/jquery.fitvids.js' }}"></script>
+<script>
+    var activateHighlight = function () {
+        document.querySelectorAll("pre code").forEach(
+            function (currentValue, currentIndex, listObj) {
+                hljs.highlightBlock(currentValue);
+            }
+        );
+    }
+    if (window.attachEvent) {
+        window.attachEvent('onload', loadHighlight);
+    } else {
+        if (window.onload) {
+            var originalOnload = window.onload;
+            var newOnload = function (evt) {
+                originalOnload(evt);
+                activateHighlight(evt);
+            };
+            window.onload = newOnload;
+        } else {
+            window.onload = activateHighlight;
+        }
+    }
+</script>
+{{/is}}
+
+<script src="{{ asset '/js/main.js' }}"></script>
+
+

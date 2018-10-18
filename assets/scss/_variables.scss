@@ -1,0 +1,31 @@
+$bluedark: #4f4d5f;
+
+$white: #fff;
+$offwhite: #f1f1f1;
+
+$lightOrange: #ffeaa7;
+$black: #000;
+$lightblack: #707070;
+
+$lightgrey: #e5eff5;
+$midgrey: #738a94;
+$darkgrey: #343f44;
+
+$dark: #343f44;
+
+$selection: $lightOrange;
+$primary: $bluedark;
+
+//--------------------------------------
+
+// Breakpoints
+$breakpoint-xs: 0;
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+
+$max-breakpoint-xs: 576px;
+$max-breakpoint-sm: 767px;
+$max-breakpoint-md: 991px;
+$max-breakpoint-lg: 1199px;

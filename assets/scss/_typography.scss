@@ -1,0 +1,104 @@
+body {
+    font-size: 16px;
+    font-family: 'Libre Baskerville';
+    font-style: normal;
+    font-weight: 400;
+    color: $darkgrey;
+    position: relative;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 700;
+    color: $dark;
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 700;
+}
+
+p {
+    color: $darkgrey;
+    font-size: 1rem;
+    line-height: 1.75rem;
+}
+
+a {
+    color: $black;
+    &:hover {
+        text-decoration: none;
+        color: $primary;
+    }
+    transition: all 200ms;
+}
+
+code {
+    color: $primary;
+}
+
+::selection {
+    background-color: $selection;
+    color: #000;
+}
+
+figcaption {
+    // color: $midgrey;
+    font-size: 14px;
+    text-align: center;
+    a {
+        color: $black;
+    }
+}
+
+blockquote {
+    margin: 0 0 1.5em;
+    padding: 0 1.5em;
+    border-left: 3px solid $primary;
+}
+img {
+    max-width: 100%;
+}
+
+/* Typography Table */
+table {
+    width: 100%;
+    margin-bottom: 1rem;
+    background-color: transparent;
+    margin: 65px 0;
+    th {
+        vertical-align: bottom;
+        border-bottom: 2px solid #dee2e6;
+    }
+    th,
+    td {
+        padding: 3px 0;
+        vertical-align: top;
+        border-top: 1px solid #dee2e6;
+    }
+}
+.overflow-y-hide {
+    overflow-y: hidden;
+}
+ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+a {
+    color: $primary;
+    &:hover {
+        color: $darkgrey;
+    }
+}
+
+input,
+textarea,
+.btn,
+button,
+.form-control:focus {
+    border-color: $primary;
+    box-shadow: none !important;
+}

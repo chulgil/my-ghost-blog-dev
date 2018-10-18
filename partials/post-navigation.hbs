@@ -1,0 +1,9 @@
+<div class="post-navigation d-flex justify-content-between">
+    {{#prev_post}}
+    <a class="post-navigation-link prev d-flex justify-content-between" href="{{ url }}"><i class="arrow_carrot-left"></i> {{title}}</a>
+    {{/prev_post}} 
+    
+    {{#next_post}}
+    <a class="post-navigation-link next d-flex justify-content-between" href="{{ url }}">{{title}} <i class="arrow_carrot-right"></i></a>
+    {{/next_post}}
+</div>

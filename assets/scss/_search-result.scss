@@ -1,0 +1,99 @@
+.search-result-container {
+    position: fixed;
+    right: -100%;
+    top: 0;
+    min-height: 100vh;
+    max-height: 100vh;
+    overflow-y: auto;
+    width: 100%;
+    z-index: 91;
+    transition: 300ms;
+    &.active {
+        right: 0;
+    }
+    .close-icon {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        z-index: 92;
+        i {
+            font-size: 30px;
+            color: $primary;
+            cursor: pointer;
+        }
+    }
+}
+.search-container-part {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 100vh;
+    justify-content: flex-end;
+}
+
+.search-result-content {
+    width: 40%;
+    padding: 50px 30px 20px;
+    background: #ffffff;
+    box-shadow: 0 0 5px rgba($bluedark, 0.5);
+    .search-box {
+        margin-bottom: 5px;
+        input {
+            padding: 20px 15px;
+            @include helvetica-neue(400);
+            color: $primary;
+            border-radius: 0;
+        }
+    }
+    .result-counting {
+        margin-bottom: 10px;
+        p {
+            @include helvetica-neue;
+            font-size: 14px;
+        }
+    }
+    .search-results {
+        margin-top: 40px;
+        ul {
+            li {
+                margin-bottom: 20px;
+                padding-bottom: 20px;
+                position: relative;
+                &:before {
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    background-color: $primary;
+                    content: '';
+                    width: 100px;
+                    height: 2px;
+                }
+                &:last-child {
+                    &:before {
+                        width: 0;
+                        height: 0;
+                    }
+                }
+                .single-result {
+                    padding: 15px;
+                    &:hover {
+                        background-color: #f1f1f1;
+                    }
+                }
+            }
+            h4 {
+                color: $primary;
+                font-size: 18px;
+                text-transform: uppercase;
+                @include helvetica-neue(700);
+            }
+            .post-time {
+                font-size: 14px;
+            }
+            .reading-time {
+                margin-left: 20px;
+                color: $midgrey;
+            }
+        }
+    }
+}

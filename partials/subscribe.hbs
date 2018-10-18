@@ -1,0 +1,15 @@
+{{#if @labs.subscribers}}
+<div class="subscribe-box">
+    <form method="post" action="{{ @blog.url }}/subscribe/" class="white-subscribe-box">
+        <input class="confirm" type="hidden" name="confirm">
+        <input class="location" type="hidden" name="location" value="{{@blog.url}}{{url}}">
+        <input class="referrer" type="hidden" name="referrer" value="{{@blog.url}}">
+        <div class="subscripe-input-wrapper">
+            <input type="email" name="email" placeholder="Your email address" class="email">
+            <button class="submit-btn d-flex" type="submit">
+                <i class="arrow_right"></i>
+            </button>
+        </div>
+    </form>
+</div>
+{{/if}}

@@ -1,0 +1,33 @@
+<div class="search-result-container" id="searchResult">
+    <div class="close-icon text-white">
+        <i class="icon_close"></i>
+    </div>
+    <div class="search-container-part">
+        <div class="search-result-content">
+            <div class="blur"></div>
+            <div class="search-box">
+                <input type="text" 
+                    class="form-control" 
+                    placeholder="Find the result"
+                    @keyup="search" 
+                    v-model="searchInput"
+                >
+            </div>
+            <div class="result-counting" v-if="searchInput.length">
+                <span v-text="'One article found' " v-if="results.length == 1"></span>
+                <span v-text="results.length + ' articles found' " v-else-if="results.length >= 1"></span> 
+                <span v-if="results.length == 0">No article found</span>
+            </div>
+            <div class="search-results">
+                <ul id="result" v-if="searchInput.length">
+                    <li v-for="(result , i) in results" :key="i">
+                        <div class="single-result">
+                            <h4><a :href="result.url" v-text="result.title"></a></h4>
+                            <time class="post-time" v-text="result.time"></time>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

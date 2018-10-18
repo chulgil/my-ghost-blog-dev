@@ -1,0 +1,53 @@
+{{!< default}} 
+{{#post}} 
+    <div class="page-cover {{^if feature_image}}no-image{{/if}}" {{#if feature_image}}style="background-image: url({{feature_image}})"
+        {{/if}}>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="page-cover-text">
+                        <h2>{{title}}</h2>
+                        <p>{{excerpt}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{{/post}}
+
+<div class="tag-list-wrapper ptb-50 ptb-md-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+
+                <div class="tag-list">
+                    {{#get "tags" include="count.posts"}}
+                        {{#foreach tags}}
+                            <div class="tag-container" ontouchstart="this.classList.toggle('hover');">
+                                <div class="flipper">
+                                    <div class="tag-card flex-wrap" style="background-image: url({{ feature_image }})">
+                                        <h3 class="text-uppercase text-center">
+                                            <a href="{{ url }}">{{ name }}</a>
+                                        </h3>
+                                        <div class="post-counts w-100 text-center text-white">
+                                            {{plural count.posts empty="no article" singular="1 article" plural="% articles"}}
+                                        </div>
+                                    </div>
+                                    <div class="tag-back d-flex align-items-center justify-content-center">
+                                        <div class="tag-back-text text-center">
+                                            <h3 class="text-uppercase">
+                                                <a href="{{ url }}">{{ name }}</a>
+                                            </h3>
+                                            <p>{{description}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {{/foreach}}
+                    {{/get}}
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

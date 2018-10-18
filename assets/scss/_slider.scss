@@ -1,0 +1,88 @@
+.featured-slider {
+    margin: 50px 0;
+    position: relative;
+    .single-feature {
+        position: relative;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        min-height: 500px;
+        &.no-image {
+            background-color: $primary;
+        }
+    }
+    .owl-item {
+        &:not(.center) {
+            filter: blur(3px);
+        }
+        &.center {
+            position: relative;
+            &:before {
+                position: absolute;
+                content: '';
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                background: rgba($black, 0.2);
+                z-index: 1;
+            }
+        }
+    }
+    .owl-nav {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        button[class*='owl-'] {
+            background-color: transparent;
+            font-size: 30px;
+            &:hover,
+            &:focus {
+                background-color: transparent;
+                outline: 0;
+            }
+            .feture-post-arrow {
+                color: $primary;
+                background: rgba($white, 0.5);
+                padding: 6px 16px;
+                &:hover {
+                    background-color: rgba($white, 1);
+                }
+            }
+        }
+        button.owl-prev,
+        button.owl-next {
+            transition: 150ms;
+        }
+        button.owl-prev:hover {
+            transform: translateX(-3px);
+        }
+        button.owl-next:hover {
+            transform: translateX(3px);
+        }
+    }
+}
+.featured-text {
+    position: absolute;
+    bottom: 25px;
+    left: 30px;
+    z-index: 2;
+    h2 {
+        color: $white;
+        @include helvetica-neue(700);
+        font-size: 30px;
+        a {
+            color: $white;
+        }
+    }
+    .date {
+        color: $white;
+        @include helvetica-neue(400);
+        font-size: 18px;
+    }
+}

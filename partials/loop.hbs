@@ -1,0 +1,17 @@
+<div class="post-loop">
+    {{#if posts.length}} 
+        <!-- Posts looping start -->
+        {{#foreach posts}}
+            {{> "post-card"}}
+        {{/foreach}}
+        <!-- Posts looping end -->
+    {{else}}
+        <h3 class="text-center mb-5 pb-5">No post found</h3>
+    {{/if}}
+    
+    {{#if posts.length}}
+    <!-- Pagination start -->
+    {{pagination}}
+    <!-- Pagination end -->
+    {{/if}}
+</div>

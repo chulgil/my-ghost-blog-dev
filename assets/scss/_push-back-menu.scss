@@ -1,0 +1,74 @@
+.push-back-menu {
+    position: fixed;
+    right: -300px;
+    top: 0;
+    max-width: 250px;
+    width: 100%;
+    background-color: $bluedark;
+    z-index: 9;
+    box-shadow: 0 3px 25px rgba(129, 129, 129, 0.7);
+    transition: 400ms;
+    &.active {
+        right: 0;
+    }
+    .close-icon {
+        margin-top: 10px;
+        margin-right: 10px;
+        cursor: pointer;
+        float: right;
+        opacity: 0.7;
+        i {
+            font-size: 30px;
+        }
+        transition: 300ms;
+        &:hover {
+            opacity: 1;
+            transform: rotate(90deg);
+        }
+    }
+    .menu-content {
+        padding: 40px 30px 40px;
+        ul {
+            li {
+                &.search {
+                    background: red;
+                }
+
+                &.nav-current {
+                    a {
+                        opacity: 1;
+                    }
+                }
+                a {
+                    color: $white;
+                    text-transform: uppercase;
+                    padding: 5px 0;
+                    margin-bottom: 15px;
+                    @include helvetica-neue(400);
+                    display: inline-block;
+                    opacity: 0.7;
+                    transition: 0.3s;
+                    font-size: 14px;
+                    &:hover {
+                        opacity: 1;
+                        margin-left: 5px;
+                    }
+                }
+                &:last-child {
+                    a {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.right-push-menu {
+    li.search {
+        transform: rotate(-85deg);
+        i {
+            font-size: 18px;
+        }
+    }
+}

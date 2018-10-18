@@ -1,0 +1,16 @@
+{{!< default}}
+
+<div class="error-page-wrapper">
+    <div class="error-contents text-center">
+        <h1 class="code">{{ code }}</h1>
+        <p class="msg">{{ message }}</p>
+    </div>
+</div>
+
+{{#contentFor "scripts"}}
+<script>
+    $(document).ready(function () {
+        $('body').addClass('error-page')
+    })
+</script>
+{{/contentFor}}

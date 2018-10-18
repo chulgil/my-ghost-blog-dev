@@ -1,0 +1,199 @@
+/* Responsive style here */
+@media all and (max-width: 1199px) {
+    .hero-content {
+        .blog-description {
+            font-size: 50px;
+        }
+    }
+    .portfolio-content {
+        .grid-sizer,
+        .single-portfolio {
+            width: calc(50% - 20px);
+
+        }
+    }
+    .hero-area{
+        .publication-cover{
+            width: 50%;
+        }
+        .hero-right{
+            width: 50%;
+        }
+    }
+
+    
+}
+@media all and (max-width: $max-breakpoint-md) {
+    /**
+        --------------------------------------
+            Post Card
+        --------------------------------------
+    */
+    .post-card {
+        margin-top: 70px;
+        margin-bottom: 70px;
+    }
+    .post-feature-image,
+    .post-content {
+        width: 98% !important;
+    }
+    .post-feature-image{
+        margin-bottom: 20px;
+    }
+    .post-content {
+        padding: 0 !important;
+        margin-top: 20px;
+        .title::before {
+            background-color: transparent !important;
+        }
+    }
+    .post-card:nth-child(2n) .post-content::before {
+        background-color: transparent !important;
+    }
+    /**
+        --------------------------------------
+            Header
+        --------------------------------------
+    */
+    .header-area {
+        background-color: #fff;
+        .header-content {
+            padding: 10px 0 !important;
+        }
+        .logo {
+            flex: 1;
+            h2.logo-text {
+                color: $primary;
+            }
+        }
+        .header-right {
+            flex: 1;
+        }
+        .header-social-profiles {
+            ul {
+                justify-content: center;
+            }
+        }
+    }
+    .search-result-content {
+        width: 100%;
+    }
+    .hero-area {
+        height: auto;
+        flex-direction: column;
+        .publication-cover {
+            height: 500px;
+            flex: auto;
+            width: 100%;
+        }
+        .hero-right {
+            padding-top: 30px;
+            width: 100%;
+            .hero-content {
+                margin-bottom: 10px;
+                padding: 25px 15px;
+                h1 {
+                    font-size: 40px;
+                }
+            }
+            .subscripe-input-wrapper {
+                margin-left: 15px;
+                width: 90%;
+            }
+        }
+    }
+
+    /**
+        --------------------------------------
+            Portfolio
+        --------------------------------------
+    */
+
+    .portfolio-content {
+        .grid-sizer,
+        .single-portfolio {
+            width: 100%;
+            margin-left: 0;
+            margin-right: 0;
+        }
+    }
+
+
+    /*Tags*/
+    .tag-list{
+        .tag-container{
+            width: calc(50% - 20px);
+        }
+    } 
+
+}
+/**
+    --------------------------------------
+        For tablet
+    --------------------------------------
+*/
+@media all and (max-width: $max-breakpoint-sm) {
+    .content-wrapper{
+        padding: 50px 30px;
+    }
+    .content-header-wrapper{
+        .content-feature-media{
+            margin: 0;
+        }
+    }
+    .kg-image-card.kg-width-wide {
+        margin: 0 calc(-10vw + 19px);
+    }
+    figure.kg-card.kg-gallery-card.kg-width-wide,
+    .writter-wide {
+        min-width: calc(100% + 5rem);
+    }
+    .content-metas {
+        margin-bottom: 20px;
+    }
+}
+
+
+/**
+    --------------------------------------
+        Mobile Device
+    --------------------------------------
+*/
+@media all and (max-width: $max-breakpoint-xs) {
+    .featured-slider .owl-item:not(.center){
+        filter: blur(0);
+    }
+    .content-wrapper{
+        padding: 50px 20px;
+    }
+    /*Tags*/
+    .tag-list{
+        .tag-container{
+            width: 100%;
+            margin: 10px 0;
+        }
+    }
+    figure.kg-card.kg-gallery-card.kg-width-wide,
+    .writter-wide  {
+        min-width: 100%;
+        margin: auto;
+        transform: translateX(0);
+    }
+    .author-box {
+        flex-direction: column;
+        .author-profile-image{
+            margin-right: 0;
+            margin-bottom: 20px;
+        }
+        .author_details{
+            text-align: center;
+        }
+        .social-profiles{
+            ul{
+                justify-content: center;
+            }
+        }
+    }
+}
+
+

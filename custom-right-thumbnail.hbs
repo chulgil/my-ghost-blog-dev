@@ -1,0 +1,81 @@
+{{!< default}}
+{{#post}} 
+    <div class="right-thumbnail-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="contents-data">
+                        <h2 class="title mb-5">{{ title }}</h2>
+                        <div class="content-metas">
+                            <span class="meta-date">{{ date }}</span>
+                            <span class="meta-reading-time">{{ reading_time }}</span>
+                            <br>
+                            <span class="meta-author">
+                                {{#primary_author}}
+                                By <a href="{{ url }}" class="font-weight-bold">{{ name }}</a>
+                                {{/primary_author}}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <img src="{{ feature_image }}" alt="{{ title }}" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="content-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9 mx-auto">
+                    {{content}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{^if page}}
+    <div class="content-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9 mx-auto">
+
+                    {{> 'post-navigation' }}
+
+                    <div class="post-sharer">
+                        <h4 class="title">Share</h4>
+                        <ul class="social-share-links flex-wrap">
+                            <li><a href="https://www.facebook.com/sharer/sharer.php?u={{url absolute=true}}" target="_blank">Facebook</a></li>
+                            <li><a href="https://twitter.com/home?status={{ excerpt }}" target="_blank">Twitter</a></li>
+                            <li><a href="https://www.linkedin.com/shareArticle?mini=true&url={{url absolute=true}}&title={{ title }}&summary={{ excerpt }}&source={{url absolute=true}}"
+                                    target="_blank">LinkedIn</a></li>
+                            <li><a href="https://plus.google.com/share?url={{url absolute=true}}">Google+</a></li>
+                        </ul>
+                    </div>
+                    {{> 'author-box'}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container pt-5">
+        <div class="row">
+            <div class="col-md-12">
+                <div id="disqus_thread"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-footer-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9 mx-auto">
+                    <h1 class="msg">Thanks for reading this whole articlse. <br>
+                        Get the latest posts delivered right to your inbox</h1>
+                    {{> 'subscribe' }}
+                </div>
+            </div>
+        </div>
+    </div>
+    {{/if}}
+{{/post}}

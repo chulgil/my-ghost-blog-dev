@@ -1,0 +1,55 @@
+{{!< default}} 
+{{#post}}
+<div class="page-cover {{^if feature_image}} no-image{{/if}}" {{#if feature_image}} style="background-image: url({{feature_image}})"
+    {{/if}}>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="page-cover-text">
+                    <h2>{{title}}</h2>
+                    <p>{{excerpt}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{/post}}
+
+
+<div class="portfolio-area" id="portfolio">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="porfolio-nav">
+                    <ul class="portfiloNav">
+                        <li><a href="javascript:void(0)" class="active" data-filter="*">All</a></li>
+                        
+                        <li v-for="tag in tags">
+                            <a href="javascript:void(0)" :data-filter=" '.' + tag " v-text="tag"></a>
+                        </li>
+                        
+                    </ul>
+                </div>
+                <div class="portfolio-content">
+                    <div class="grid-sizer"></div>
+
+
+                {{#get "posts" include="tags" filter="primary_tag:portfolio" limit="all"}}
+                    {{#foreach posts}}
+                    <div class="single-portfolio {{#foreach tags}}{{slug}} {{/foreach}}">
+                        <div class="port-thumbnail">
+                            <a href="{{ url }}"><img src="{{ feature_image }}" alt="{{ title }}"></a>
+                        </div>
+                        <div class="port-text">
+                            <h4><a href="{{ url }}">{{ title }}</a></h4>
+                            <time>{{date format="DD MMMM YYYY"}}</time>
+                        </div>
+                    </div>
+                    {{/foreach}}
+                {{/get}}
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

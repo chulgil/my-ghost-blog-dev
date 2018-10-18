@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="{{lang}}">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>{{meta_title}}</title>
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />    
+    <link rel="stylesheet" href="{{ asset 'css/theme.css' }}">
+    {{{block "styles"}}}
+    {{ghost_head}}
+</head>
+<body class="{{body_class}}">
+    <div class="site-wrapper">
+        {{> "header"}}
+        {{{body}}}
+    </div>
+
+    <footer class="site-footer">
+        <p>{{@blog.title}} Minimal blogging and portfolio ghost theme</p>
+    </footer>
+
+    {{> "footer-scripts"}}
+    {{ghost_foot}}
+    {{{block "scripts"}}}
+</body>
+</html>

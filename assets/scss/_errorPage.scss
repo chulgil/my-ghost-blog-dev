@@ -1,0 +1,28 @@
+.error-page {
+    .search {
+        display: none;
+    }
+    // background-image: url(../images/404-mask.png);
+}
+
+.error-page-wrapper {
+    width: 100%;
+    height: calc(100vh - 58px); // reduce footer height
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $bluedark;
+
+    .error-contents {
+    }
+}
+
+.error-contents {
+    .code {
+        font-family: 'Lemon/Milk';
+        font-size: 130px;
+    }
+    .msg {
+        font-family: monospace;
+    }
+}

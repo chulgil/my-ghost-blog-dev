@@ -1,0 +1,17 @@
+<div class="hero-area d-flex justify-content-between align-items-center flex-wrap">
+    <div class="publication-cover" style="background-image: url({{ @blog.cover_image }})"></div>
+    
+    <div class="hero-right px-2">
+        <div class="hero-content">
+            <h1 class="blog-description">{{ @blog.description }}</h1>
+        </div>
+        {{> subscribe }}
+        <div class="hero-menu-link mt-5">
+            <a href="/contact" class="d-flex align-items-center">
+                <span class="pr-2">contact ME</span> 
+                <i class="arrow_right feture-post-arrow"></i>
+            </a>
+        </div>
+    </div>
+    <i class="arrow_down hero-bottom-arrow"></i>
+</div>

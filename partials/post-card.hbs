@@ -1,0 +1,54 @@
+<article class="post-card animation animated {{post_class}}{{#unless feature_image}} no-image{{/unless}} d-flex flex-wrap mtb-100">
+    {{#if feature_image}}
+    <div class="post-feature-image">
+        <a href="{{ url absolute=true }}">
+            <img src="{{ feature_image }}" alt="{{ title }}">
+        </a>
+    </div>
+    {{/if}}
+    <div class="post-content d-flex flex-column justify-content-center">
+        <h3 class="title"><a href="{{ url absolute=true }}">{{ title }}</a></h3>
+        <div class="post-meta">
+            <time class="post-meta__date" datetime="{{date format='YYYY-MM-DD'}}">
+                {{date format="DD MMMM YYYY"}}
+            </time>
+            <span class="reading-time">
+                {{reading_time}}
+            </span>
+        </div>
+
+        {{#primary_author}}
+        <div class="author">
+            By <a href="{{ url }}">{{ name }}</a>
+        </div>
+        {{/primary_author}}
+
+        <div class="post-card-excerpt">
+            <p>{{excerpt}}</p>
+        </div>
+        {{#if tags}}
+        <div class="tags">
+            {{#foreach tags}}
+            <a href="{{url}}" title="{{name}}" class="tag {{slug}}">#{{name}}</a>
+            {{/foreach}}
+        </div>
+        {{/if}}
+
+
+        <footer class="post-card-footer pt-4 d-flex justify-content-between">
+            <a href="{{ url absolute=true }}" class="d-flex align-items-center continue-reading">
+                <span>Continue</span>
+                <i class="arrow_right"></i>
+            </a>
+            
+            <div class="share-links">
+                <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ url absolute=true }}" class="mr-2"><i class="social_facebook"></i></a>
+
+                <a target="_blank" href="https://twitter.com/home?status={{ excerpt }}"><i class="social_twitter"></i></a>
+            </div>
+        </footer>
+    </div>
+</article>
+
+
+

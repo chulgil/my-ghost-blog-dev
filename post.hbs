@@ -1,0 +1,125 @@
+{{!< default}}
+{{#post}}
+
+    {{#if page}}
+    <div class="page-cover {{^if feature_image}}no-image{{/if}}" {{#if feature_image}} style="background-image: url({{feature_image}})"
+        {{/if}}>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="page-cover-text">
+                        <h2>{{title}}</h2>
+                        <p>{{excerpt}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    {{else}}
+        <div class="content-header-wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10 mx-auto">
+                        <h1 class="content-title">{{ title }}</h1>
+                        <div class="content-metas">
+                            <span class="meta-date">{{ date }}</span>
+                            <span class="meta-reading-time">{{ reading_time }}</span>
+                            <br>
+                            <span class="meta-author">
+                                {{#primary_author}}
+                                By <a href="{{ url }}" class="font-weight-bold">{{ name }}</a>
+                                {{/primary_author}}
+                            </span>
+                    </div>
+                </div>
+            </div>
+            {{#if feature_image}}
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="content-feature-media w-100 mx-auto mt-5" style="background-image: url( {{ feature_image }} )" >
+                    </div>
+                </div>
+            </div>
+            {{/if}}
+        </div>
+    {{/if}}
+
+    <div class="content-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9 mx-auto">
+                    {{content}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{^if page}}
+    <div class="content-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9 mx-auto">
+
+                    {{> 'post-navigation' }}
+
+                    <div class="post-sharer">
+                        <h4 class="title">Share</h4>
+                        <ul class="social-share-links flex-wrap">
+                            <li><a href="https://www.facebook.com/sharer/sharer.php?u={{url absolute=true}}" target="_blank">Facebook</a></li>
+                            <li><a href="https://twitter.com/home?status={{ excerpt }}" target="_blank">Twitter</a></li>
+                            <li><a href="https://www.linkedin.com/shareArticle?mini=true&url={{url absolute=true}}&title={{ title }}&summary={{ excerpt }}&source={{url absolute=true}}"
+                                    target="_blank">LinkedIn</a></li>
+                            <li><a href="https://plus.google.com/share?url={{url absolute=true}}">Google+</a></li>
+                        </ul>
+                    </div>
+                    {{> 'author-box'}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container pt-5">
+        <div class="row">
+            <div class="col-md-12">
+                <div id="disqus_thread"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="content-footer-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9 mx-auto">
+                    <h1 class="msg">Thanks for reading this whole articlse. <br>
+                    Get the latest posts delivered right to your inbox</h1>
+                    <div class="mx-auto">
+                         {{> 'subscribe' }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{/if}}
+{{/post}}
+
+
+
+{{#contentFor "scripts"}}
+<script>
+    {{#post}}
+        var disqus_config = function () {
+            this.page.url = "{{url absolute="true"}}";
+            this.page.identifier = "ghost-{{comment_id}}";
+        };
+    {{/post}}
+    (function () { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://writter-theme.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+{{/contentFor}}

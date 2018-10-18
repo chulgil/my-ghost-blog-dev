@@ -1,0 +1,14 @@
+<!-- Featured slider area -->
+<div class="featured-slider owl-carousel owl-theme">
+    {{#get "posts" filter="featured:true" include="authors"}} 
+    {{#foreach posts}}
+    <div class="single-feature {{^if feature_image}}no-image{{/if}}" 
+    {{#if feature_image}}style="background-image: url({{img_url feature_image}});"{{/if}}>
+        <div class="featured-text">
+            <h2><a href="{{ url }}"> {{ title }} </a></h2>
+            <div class="date">{{date published_at timeago="true"}}</div>
+        </div>
+    </div>
+    {{/foreach}}
+    {{/get}}
+</div>

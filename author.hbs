@@ -1,0 +1,79 @@
+{{!< default}}
+
+{{#author}} 
+
+<div class="author-cover" {{#if cover_image}} style="background-image: url({{ cover_image }})"{{/if}}></div>
+
+    <div class="author-box-wrapper mtm-15">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="author-info-box">
+                        <div class="profile-pic mr-4" style="background-image: url({{profile_image}})">
+                        </div>
+                        <div class="author-data text">
+                            <h2 class="name text-uppercase">{{ name }}</h2>
+                            <div class="social-profiles">
+                                <ul class="d-flex">
+                                    {{#if facebook}}
+                                    <li class="mr-3"><a href="{{facebook_url}}" target="_blank">
+                                            <i class="social_facebook"></i></a></li>
+                                    {{/if}}
+
+                                    {{#if twitter}}
+                                    <li class="mr-3"><a href="{{twitter_url}}" target="_blank"><i class="social_twitter"></i></a></li>
+                                    {{/if}}
+
+                                    {{#if website}}
+                                    <li><a href="{{website}}" target="_blank"><i class="icon_globe-2"></i></a></li>
+                                    {{/if}}
+
+                                    {{#if location}}
+                                    <li class="location">{{ location }}</li>
+                                    {{/if}}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{#if bio}}
+    <div class="author-bio-wrapper mtb-120 mtb-sm-85">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 mx-auto">
+                    <div class="author-bio text-center">
+                        {{bio}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{/if}}
+
+    <div class="author-posts mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 mx-auto">
+                    <h1 class="author-post-counts text-center">{{plural ../pagination.total empty='No posts'
+                        singular='%
+                        article' plural='% articles'}} written by {{name}}</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    {{/author}}
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                {{> loop}}
+            </div>
+        </div>
+    </div>

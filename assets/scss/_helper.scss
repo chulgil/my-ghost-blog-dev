@@ -1,0 +1,135 @@
+@for $i from 1 through 5 {
+    .flex-#{$i} {
+        flex: #{$i};
+    }
+}
+
+@for $i from 1 through 20 {
+    .mtm-#{$i} {
+        margin-top: -#{$i/2}rem;
+    }
+    .mrm-#{$i} {
+        margin-right: -#{$i/2}rem;
+    }
+    .mbm-#{$i} {
+        margin-bottom: -#{$i/2}rem;
+    }
+    .mlm-#{$i} {
+        margin-left: -#{$i/2}rem;
+    }
+}
+
+// Margin Top Bottom for all screen
+@for $i from 30 through 130 {
+    .mtb-#{$i} {
+        margin-top: #{$i}px;
+        margin-bottom: #{$i}px;
+    }
+}
+// Margin Top Bottom for Screen: xs
+@for $i from 30 through 130 {
+    @media all and (min-width: $breakpoint-xs) {
+        .mtb-xs-#{$i} {
+            margin-top: #{$i}px;
+            margin-bottom: #{$i}px;
+        }
+    }
+}
+
+// Margin Top Bottom for Screen: SM
+@for $i from 30 through 130 {
+    @media all and (min-width: $breakpoint-sm) {
+        .mtb-sm-#{$i} {
+            margin-top: #{$i}px;
+            margin-bottom: #{$i}px;
+        }
+    }
+}
+
+// Margin Top Bottom for Screen: MD
+@for $i from 30 through 130 {
+    @media all and (min-width: $breakpoint-md) {
+        .mtb-md-#{$i} {
+            margin-top: #{$i}px;
+            margin-bottom: #{$i}px;
+        }
+    }
+}
+
+// Margin Top Bottom for Screen: LG
+@for $i from 30 through 130 {
+    @media all and (min-width: $breakpoint-lg) {
+        .mtb-lg-#{$i} {
+            margin-top: #{$i}px;
+            margin-bottom: #{$i}px;
+        }
+    }
+}
+
+// Margin Top Bottom for Screen: XL
+@for $i from 30 through 130 {
+    @media all and (min-width: $breakpoint-xl) {
+        .mtb-xl-#{$i} {
+            margin-top: #{$i}px;
+            margin-bottom: #{$i}px;
+        }
+    }
+}
+
+// Padding Top Bottom for all screen
+@for $i from 30 through 130 {
+    .ptb-#{$i} {
+        padding-top: #{$i}px;
+        padding-bottom: #{$i}px;
+    }
+}
+
+// Padding Top Bottom for Screen: xs
+@for $i from 30 through 130 {
+    @media all and (min-width: $breakpoint-xs) {
+        .ptb-xs-#{$i} {
+            padding-top: #{$i}px;
+            padding-bottom: #{$i}px;
+        }
+    }
+}
+
+// padding Top Bottom for Screen: SM
+@for $i from 30 through 130 {
+    @media all and (min-width: $breakpoint-sm) {
+        .ptb-sm-#{$i} {
+            padding-top: #{$i}px;
+            padding-bottom: #{$i}px;
+        }
+    }
+}
+
+// padding Top Bottom for Screen: MD
+@for $i from 30 through 130 {
+    @media all and (min-width: $breakpoint-md) {
+        .ptb-md-#{$i} {
+            padding-top: #{$i}px;
+            padding-bottom: #{$i}px;
+        }
+    }
+}
+
+// padding Top Bottom for Screen: LG
+@for $i from 30 through 130 {
+    @media all and (min-width: $breakpoint-lg) {
+        .ptb-lg-#{$i} {
+            padding-top: #{$i}px;
+            padding-bottom: #{$i}px;
+        }
+    }
+}
+
+// padding Top Bottom for Screen: XL
+@for $i from 30 through 130 {
+    @media all and (min-width: $breakpoint-xl) {
+        .ptb-xl-#{$i} {
+            padding-top: #{$i}px;
+            padding-bottom: #{$i}px;
+        }
+    }
+}

@@ -1,0 +1,74 @@
+.author-cover {
+    background-color: $offwhite;
+    height: 450px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.author-info-box {
+    display: flex;
+    align-items: flex-end;
+    @media all and (max-width: $breakpoint-md) {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        .profile-pic {
+            margin-bottom: 25px;
+            margin-right: 0 !important;
+        }
+    }
+    .profile-pic {
+        width: 250px;
+        height: 250px;
+        background-size: cover;
+        background-position: center center;
+    }
+    .author-data {
+        .name {
+            @include helvetica-neue(300);
+        }
+        .location {
+            margin-left: 35px;
+        }
+    }
+}
+
+.author-bio {
+    font-size: 25px;
+    @include helvetica-neue(300);
+    font-style: italic;
+
+    position: relative;
+
+    $fz: 35px;
+    &::before {
+        content: '“';
+        position: absolute;
+        top: -30px;
+        left: -30px;
+        font-size: $fz;
+        @include libre;
+    }
+    &::after {
+        content: '”';
+        position: absolute;
+        right: -30px;
+        bottom: -30px;
+        font-size: $fz;
+        @include libre;
+    }
+
+    @media all and (max-width: $breakpoint-md) {
+        &::before {
+            left: -12px;
+        }
+        &::after {
+            right: 5px;
+        }
+    }
+}
+
+.author-post-counts {
+    font-size: 25px;
+}

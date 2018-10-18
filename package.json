@@ -1,0 +1,26 @@
+{
+    "name": "writter",
+    "description": "Ghost portfolio theme",
+    "demo": "http://ghost-writter.electronthemes.com/",
+    "version": "1.0.0",
+    "engines": {
+        "ghost": ">=2.0.0"
+    },
+    "license": "MIT",
+    "author": {
+        "name": "ElectronThemes",
+        "email": "electronthemes@gmail.com",
+        "url": "https://www.facebook.com/electronthemes"
+    },
+    "keywords": [
+        "ghost",
+        "theme",
+        "portfolio",
+        "magazine",
+        "responsive",
+        "ghost-theme"
+    ],
+    "config": {
+        "posts_per_page": 5
+    }
+}
