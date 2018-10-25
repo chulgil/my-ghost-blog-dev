@@ -1,0 +1,37 @@
+
+<div class="side-content">
+
+    <div class="logo flex-2">
+        <a href="{{@blog.url}}" class="site-logo">
+            {{#if @blog.logo}}
+                <img src="{{ @blog.logo }}" alt="{{ @blog.title }}">
+            {{else}}
+                <h3 class="logo-text">&Vn</h3>
+            {{/if}}
+        </a>
+    </div>
+
+
+{{#is "post"}}
+
+    <div class="side-nav">
+        <h5><a href="#toc1">Table of contents</a></h5>
+        <div class="js-toc"></div>
+    </div>
+
+{{/is}}
+
+{{#is "home"}}
+    <div class="c-hero">
+        <div>
+            <h2>Thoughts, Stories and Ideas.</h2>
+            <p>Don't cry because it's over, smile because it happened.
+                <br>- <a href="https://en.wikipedia.org/wiki/Dr._Seuss">Dr. Seuss</a>
+            </p>
+        </div>
+    </div>
+{{/is}}
+
+</div>
+
+

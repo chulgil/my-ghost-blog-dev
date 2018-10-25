@@ -1,52 +1,44 @@
 <header class="header-area {{#is "home"}}home-page-navbar{{else}}inner-page-navbar{{/is}}">
     <div class="container-fluid">
-        <div class="row">
+        <div class="row line">
             <div class="col-sm-12">
                 <div class="header-content d-flex justify-content-between align-items-center py-3">
-                    <div class="logo flex-3">
-                        <a href="{{@blog.url}}" class="site-logo">
-                            {{#if @blog.logo}}
-                                <img src="{{ @blog.logo }}" alt="{{ @blog.title }}">
-                            {{else}}
-                                <h2 class="logo-text">{{ @blog.title }}</h2>
-                            {{/if}}
-                        </a>
-                    </div>
-                    <div class="header-social-profiles flex-1">
-                        <ul>
-                            
-                            {{#if @blog.facebook}}
-                            <li>
-                                <a href="{{facebook_url}}">
-                                    <i class="social_facebook header-icon"></i>
-                                </a>
-                            </li>
-                            {{/if}}
 
-                            {{#if @blog.twitter}}
-                            <li>
-                                <a href="{{twitter_url}}">
-                                    <i class="social_twitter header-icon"></i>
-                                </a>
-                            </li>
-                            {{/if}}
-
-                        </ul>
+                    <div class="menu-content flex-start">
+                        {{ navigation }}
                     </div>
+
                     <div class="header-right flex-1 justify-content-end">
                         <div class="right-push-menu">
+                            <div class="header-social-profiles flex-1">
+                                <ul>
+
+                                    {{#if @blog.facebook}}
+                                        <li>
+                                            <a href="{{facebook_url}}">
+                                                <i class="social_facebook header-icon"></i>
+                                            </a>
+                                        </li>
+                                    {{/if}}
+
+                                    {{#if @blog.twitter}}
+                                        <li>
+                                            <a href="{{twitter_url}}">
+                                                <i class="social_twitter header-icon"></i>
+                                            </a>
+                                        </li>
+                                    {{/if}}
+
+                                </ul>
+                            </div>
+
                             <ul class="d-flex align-items-center">
                                 <li class="search">
                                     <a href="javascript:void(0)">
                                         <i class="icon_search header-icon"></i>
                                     </a>
                                 </li>
-                                <li class="menu-icon ml-3">
-                                    <span class="menu-bar">
-                                        <span class="single-bar"></span>
-                                        <span class="single-bar"></span>
-                                    </span>
-                                </li>
+
                             </ul>
                         </div>
                     </div>

@@ -6,16 +6,16 @@
         <div class="search-result-content">
             <div class="blur"></div>
             <div class="search-box">
-                <input type="text" 
-                    class="form-control" 
+                <input type="text"
+                    class="form-control"
                     placeholder="Find the result"
-                    @keyup="search" 
+                    @keyup="search"
                     v-model="searchInput"
                 >
             </div>
             <div class="result-counting" v-if="searchInput.length">
                 <span v-text="'One article found' " v-if="results.length == 1"></span>
-                <span v-text="results.length + ' articles found' " v-else-if="results.length >= 1"></span> 
+                <span v-text="results.length + ' articles found' " v-else-if="results.length >= 1"></span>
                 <span v-if="results.length == 0">No article found</span>
             </div>
             <div class="search-results">

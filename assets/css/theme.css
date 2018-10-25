@@ -541,21 +541,11 @@ pre code {
 
 .container {
   width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
+  /*padding-left: 30px;*/
+  /*margin-right: auto;*/
+  /*margin-left: auto;*/
 }
-@media (min-width: 576px) {
-  .container {
-    max-width: 540px;
-  }
-}
-@media (min-width: 768px) {
-  .container {
-    max-width: 720px;
-  }
-}
+
 @media (min-width: 992px) {
   .container {
     max-width: 960px;
@@ -4510,48 +4500,6 @@ input[type="button"].btn-block {
 }
 .alert-dark .alert-link {
   color: #040505;
-}
-
-@keyframes progress-bar-stripes {
-  from {
-    background-position: 1rem 0;
-  }
-  to {
-    background-position: 0 0;
-  }
-}
-.progress {
-  display: flex;
-  height: 1rem;
-  overflow: hidden;
-  font-size: 0.75rem;
-  background-color: #e9ecef;
-  border-radius: 0.25rem;
-}
-
-.progress-bar {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  color: #fff;
-  text-align: center;
-  white-space: nowrap;
-  background-color: #007bff;
-  transition: width 0.6s ease;
-}
-@media screen and (prefers-reduced-motion: reduce) {
-  .progress-bar {
-    transition: none;
-  }
-}
-
-.progress-bar-striped {
-  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-  background-size: 1rem 1rem;
-}
-
-.progress-bar-animated {
-  animation: progress-bar-stripes 1s linear infinite;
 }
 
 .media {
@@ -18596,7 +18544,7 @@ button,
 */
 .header-area {
   width: 100%;
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
   z-index: 9;
@@ -18621,11 +18569,12 @@ button,
   display: none;
 }
 .header-area .header-icon {
-  font-size: 15px;
+  font-size: 20px;
 }
 
 .header-social-profiles {
-  margin-left: 5px;
+  margin-right: 10px;
+  float: left;
 }
 .header-social-profiles ul {
   display: flex;
@@ -18663,7 +18612,60 @@ button,
 
 /**
     -------------------------------------------
-    Push Back menu 
+    Dot line
+    -------------------------------------------
+*/
+.dotted-line {
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+}
+
+.dotted-line:after {
+  content: "..........................................................................................................";
+  letter-spacing: 6px;
+  font-size: 30px;
+  color: #9cbfdb;
+  vertical-align: 3px;
+  padding-left: 10px;
+}
+
+/**
+    -------------------------------------------
+    Main menu
+    -------------------------------------------
+*/
+
+.header-content .menu-content {
+  margin-left: 0px;
+}
+.header-content .menu-content ul{
+  display: flex;
+  justify-content: flex-end;
+}
+.header-content .menu-content ul li.nav-current a {
+  opacity: 1;
+}
+.header-content .menu-content ul li{
+  color: inherit;
+  text-transform: uppercase;
+  padding : 0px 10px 0px 10px;
+  display: flex;
+  justify-content: flex-end;
+  opacity: 0.7;
+  transition: 0.3s;
+  font-size: 16px;
+}
+.header-content .menu-content ul li a:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+.header-content .menu-content ul li:last-child a {
+  margin-bottom: 0;
+}
+/**
+    -------------------------------------------
+    Push Back menu
     -------------------------------------------
 */
 .push-back-menu {
@@ -18884,6 +18886,30 @@ button,
   color: #4f4d5f;
 }
 
+
+/**
+    -------------------------------------------
+    Main content
+    -------------------------------------------
+*/
+
+.site-left {
+  display: flex;
+  flex: 0 0 280px;
+  flex-direction: column;
+  float: left;
+  background-color: #f4f8fb;
+  position: fixed;
+  width: 300px;
+  height: 100%;
+  transform: translateX(0);
+  z-index: 800;
+}
+.site-left-x {
+  margin-left: 300px;
+}
+
+
 @keyframes MoveUpDown {
   0%,
     100% {
@@ -18895,6 +18921,45 @@ button,
 }
 /**
     -------------------------------------------
+    Side Menu
+    -------------------------------------------
+*/
+
+.side-content {
+  padding: 15px;
+}
+
+.side-content .c-hero {
+  position: absolute;
+  bottom: 0%;
+  left: 50%;
+  right: 0;
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  min-width: 75%;
+}
+
+.side-nav {
+  overflow-y: auto;
+  position: fixed;
+  top: 80px;
+}
+
+.side-menu-toggle {
+  border: 5px solid #f4f8fb;
+  border-radius: 4px;
+  cursor: pointer;
+  display: block;
+  height: 36px;
+  position: fixed;
+  left: -12px;
+  top: 12px;
+  width: 25px;
+  z-index: 999;
+}
+
+/**
+    -------------------------------------------
     Page Cover
     -------------------------------------------
 */
@@ -18902,8 +18967,7 @@ button,
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  background-color: #f1f1f1;
-  height: 380px;
+  height: 30px;
   display: flex;
   align-items: center;
 }
@@ -18924,15 +18988,16 @@ button,
 
 .page-cover-text {
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   align-items: flex-start;
+  position: absolute;
+  width:100%;
 }
 .page-cover-text h2 {
-  font-size: 60px;
+  font-size: 45px;
   font-family: 'Montserrat', sans-serif;
   font-weight: 300;
   color: #4f4d5f;
-  margin-bottom: 15px;
   text-transform: uppercase;
   padding: 0 10px;
   display: inline-block;
@@ -19014,7 +19079,7 @@ button,
   flex-direction: row-reverse;
 }
 .post-card:nth-child(2n + 1) .post-content {
-  padding-right: 55px;
+  /*padding-right: 55px;*/
 }
 .post-card:nth-child(2n + 1) .post-content .title {
   position: relative;
@@ -19068,7 +19133,6 @@ button,
   font-weight: 600;
   color: #4f4d5f;
   display: inline-block;
-  margin-right: 25px;
 }
 .post-card .post-content .author {
   font-family: 'Montserrat', sans-serif;
@@ -19077,6 +19141,7 @@ button,
 }
 .post-card .post-content .post-card-excerpt {
   color: #707070;
+  display: inline-block;
 }
 .post-card .post-content .post-card-excerpt p {
   color: #707070;
@@ -19094,7 +19159,7 @@ button,
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   text-transform: uppercase;
-  padding-right: 5px;
+  padding: 10px;
 }
 .post-card .post-content .continue-reading i {
   font-size: 25px;
@@ -19251,7 +19316,7 @@ button,
 }
 
 .content-header-wrapper {
-  padding-top: 120px;
+  padding-top: 30px;
 }
 .content-header-wrapper.fullwidth-header {
   padding-bottom: 120px;
@@ -19307,7 +19372,7 @@ button,
 .content-wrapper {
   position: relative;
   margin: 0 auto;
-  padding: 65px;
+  padding: 65px 0px 0px 0px;
   min-height: 230px;
   background: #fff;
   font-weight: 400;
@@ -19372,6 +19437,11 @@ button,
   font-weight: 700;
 }
 
+.content-wrapper img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
 .content-footer-wrapper {
   margin: 85px 0;
 }
@@ -19923,7 +19993,7 @@ figure.kg-card.kg-gallery-card.kg-width-wide,
 
 /**
     -------------------------------------------
-    Responsive Style 
+    Responsive Style
     -------------------------------------------
 */
 /* Responsive style here */
@@ -19945,6 +20015,21 @@ figure.kg-card.kg-gallery-card.kg-width-wide,
   }
 }
 @media all and (max-width: 991px) {
+  /**
+      --------------------------------------
+          Side Bar
+      --------------------------------------
+  */
+  .site-left {
+      display: none;
+  }
+  .site-left-x {
+      margin-left:0;
+  }
+  .side-menu-toggle {
+      display: none;
+  }
+
   /**
       --------------------------------------
           Post Card
@@ -19995,6 +20080,9 @@ figure.kg-card.kg-gallery-card.kg-width-wide,
   }
   .header-area .header-right {
     flex: 1;
+  }
+  .header-area .header-left {
+    justify-content: left;
   }
   .header-area .header-social-profiles ul {
     justify-content: center;
@@ -20072,6 +20160,9 @@ figure.kg-card.kg-gallery-card.kg-width-wide,
   .content-metas {
     margin-bottom: 20px;
   }
+  .header-content .menu-content {
+    display : none;
+  }
 }
 /**
     --------------------------------------
@@ -20115,4 +20206,119 @@ figure.kg-card.kg-gallery-card.kg-width-wide,
   }
 }
 
+/**
+    --------------------------------------
+        Table of Contents
+    --------------------------------------
+*/
+.table-contents {
+  padding-top: 50px;
+
+}
+.table-contents li {
+  position:relative;
+  width:100%;
+  overflow:hidden;
+}
+
+.table-contents a:hover {
+  background-color: palegoldenrod;
+}
+.table-contents li:after {
+  font-family: Times New Roman;
+  content:"......................................................................................................................................";
+  text-indent: -1px;
+  display:block;
+  letter-spacing:4px;
+  position:absolute;
+  left:0px;
+  bottom:0px;
+  z-index:-1;
+  font-weight:bold;
+}
+.table-contents li span {
+  display:inline-block;
+  background-color:#FFF;
+  padding-right:5px;
+}
+
+.table-contents li .number {
+  float:right;
+  font-weight:bold;
+  padding-left:5px;
+}
+
+.table-contents .tag {
+  margin:1.2em 0 .5em 0;
+}
+
+.table-contents .post {
+  margin:0 0 .6em 0;
+}
+
+.table-contents .title {
+  padding-left:.6em;
+
+}
+
+.table-contents .contents {
+  text-align:left;
+  font-size:150%;
+  letter-spacing:.1em;
+  margin-bottom:10px;
+  margin-right:-.1em;
+}
+
+.table-contents ul {
+  padding-left:15px;
+}
+
+/**
+    --------------------------------------
+        TOC
+    --------------------------------------
+*/
+.js-toc {
+  padding: 10px 0px 0px 5px;
+  font-size: 14px;
+  overflow-y: auto;
+  position: relative;
+  height: 600px;
+}
+
+.toc-list-item {
+  line-height: 30px;
+}
+
 /*# sourceMappingURL=theme.css.map */
+/**
+    --------------------------------------
+        Default
+    --------------------------------------
+*/
+.ca {text-transform: capitalize;}
+.up {text-transform: uppercase;}
+.lo {text-transform: lowercase;}
+.va {font-variant: small-caps;}
+
+.line {
+  border-bottom-style: ridge;
+  border-bottom-width: 7px;
+  border-bottom-color: #f4f8fb;
+}
+.right {
+  text-align: right!important;
+  float: right!important;
+}
+.center {
+  text-align: center!important;
+}
+.left {
+  text-align: left!important;
+  float: left!important;
+}
+
+.m-center {
+  margin-left: auto!important;
+  margin-right: auto!important;
+}

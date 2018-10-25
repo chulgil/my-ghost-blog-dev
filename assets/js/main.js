@@ -1,6 +1,6 @@
 $(document).ready(function () {
     /*-----------------------------
-        Featured Posts slider 
+        Featured Posts slider
     -----------------------------*/
     $('.featured-slider').owlCarousel({
         center: true,
@@ -29,6 +29,28 @@ $(document).ready(function () {
             },
         },
     })
+
+    /*-----------------------------
+        Side menu
+    -----------------------------*/
+    $('.side-menu-toggle').on('click', function () {
+        $('#side-menu-toggle').toggleClass( "site-left-x",200);
+        $('#site-content').toggleClass( "site-left-x",200);
+        $('.site-left').toggle('slide','left',200);
+        $('.container').toggleClass('m-center');
+        $('.floating-header').toggleClass( "site-left-x",200);
+    });
+
+    /*-----------------------------
+        Toc href target
+    -----------------------------*/
+    $('.toc-list-item a').on('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        console.log('cccc');
+        var thisTarget = $(this).attr("href");
+        $(window).scrollTop($(thisTarget).offset().top-80);
+    });
 
     /*-----------------------------
         Push back menu
@@ -129,13 +151,14 @@ $(document).ready(function () {
     // Gallery
     const galleryContainer = $('.kg-gallery-container').find('img')
 
-    console.log(galleryContainer)
+
 })
 
 /*-----------------------------
         Article Search with vuejs
 -----------------------------*/
 new Vue({
+    base: '/',
     name: 'Search Result',
     el: '#searchResult',
     data: {
@@ -146,7 +169,7 @@ new Vue({
         search() {
             var api = ghost.url.api('posts', {
                 limit: 'all',
-                fields: 'title,created_at,url',
+                fields: 'title,created_at,slug',
             })
             axios.get(api).then(({ data: { posts } }) => {
                 this.results = posts
@@ -158,7 +181,7 @@ new Vue({
                     .map(post => ({
                         title: post.title,
                         time: moment(post.created_at).format('MMM Do YY'),
-                        url: post.url,
+                        url: post.slug,
                     }))
             })
         },

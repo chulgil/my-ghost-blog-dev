@@ -1,0 +1,42 @@
+<div class="floating-header site-left-x">
+    <span class="floating-header-divider">&nbsp;&nbsp;</span>
+    <div class="floating-header-title">{{title}}</div>
+    <div class="floating-header-share">
+        <div class="floating-header-share-label">Share this {{> "icons/point"}}</div>
+        <a class="floating-header-share-tw" href="https://twitter.com/share?text={{encode title}}&amp;url={{url absolute="true"}}"
+        onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">
+        {{> "icons/twitter"}}
+        </a>
+        <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}"
+        onclick="window.open(this.href, 'share-facebook','width=580,height=296');return false;">
+        {{> "icons/facebook"}}
+        </a>
+    </div>
+
+    <div class="soc nav">
+        <li><a href="javascript:history.back()">
+            <span class="icon goback left">{{> "icons/goback"}}</span>
+            <span class="label" >click to go back</span></a>
+        </li>
+    </div>
+    <div class="soc search">
+        <li><a class="icon search" href="#">{{> "icons/search"}}</a></li>
+    </div>
+    <div class="soc social">
+        <li>
+            <span class="label left" >Share this</span>
+            <span class="icon goback left">{{> "icons/share"}}</span>
+        </li>
+        <li><a class="icon social" href="https://twitter.com/share?text={{encode title}}&amp;url={{url absolute="true"}}"
+            onclick="window.open(this.href, 'share-twitter', 'width=550,height=435');return false;">{{> "icons/twitter"}}</a></li>
+        <li><a class="icon social" href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}"
+            onclick="window.open(this.href, 'share-facebook','width=580,height=496');return false;">
+                {{> "icons/facebook"}}</a></li>
+    </div>
+
+    <progress id="reading-progress" class="progress" value="0">
+        <div class="progress-container">
+            <span class="progress-bar"></span>
+        </div>
+    </progress>
+</div>

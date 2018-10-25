@@ -12,9 +12,19 @@
 <script src="{{ asset '/plugins/moment.min.js' }}"></script>
 <script src="{{ asset '/plugins/magnific-popup/jquery.magnific-popup.min.js' }}"></script>
 
-{{#is "post, page"}}
+<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"
+        integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E="
+        crossorigin="anonymous"></script>
+
+{{#is "post"}}
+<script src="{{ asset '/plugins/tocbot.min.js' }}"></script>
 <script src="{{ asset '/plugins/highlight.min.js' }}"></script>
 <script src="{{ asset '/plugins/jquery.fitvids.js' }}"></script>
+<script src="{{ asset "js/floatingheader.js" }}"></script>
+<script src="{{ asset "js/jquery.fitvids.js" }}"></script>
+<script src="{{ asset 'js/tocbot.js' }}"></script>
+
+
 <script>
     var activateHighlight = function () {
         document.querySelectorAll("pre code").forEach(

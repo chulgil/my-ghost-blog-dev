@@ -6,7 +6,7 @@
         {{/if}}>
         <div class="container">
             <div class="row">
-                <div class="col-sm-12">
+                <div class="col-sm-10">
                     <div class="page-cover-text">
                         <h2>{{title}}</h2>
                         <p>{{excerpt}}</p>
@@ -20,7 +20,7 @@
         <div class="content-header-wrapper">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-10 mx-auto">
+                    <div class="col-md-12 center">
                         <h1 class="content-title">{{ title }}</h1>
                         <div class="content-metas">
                             <span class="meta-date">{{ date }}</span>
@@ -48,7 +48,7 @@
     <div class="content-wrapper">
         <div class="container">
             <div class="row">
-                <div class="col-md-9 mx-auto">
+                <div class="col-md-11 m-center js-toc-content">
                     {{content}}
                 </div>
             </div>
@@ -59,11 +59,11 @@
     <div class="content-bottom">
         <div class="container">
             <div class="row">
-                <div class="col-md-9 mx-auto">
+                <div class="col-md-11 m-center">
 
                     {{> 'post-navigation' }}
 
-                    <div class="post-sharer">
+                    <div class="post-sharer col-sm-12">
                         <h4 class="title">Share</h4>
                         <ul class="social-share-links flex-wrap">
                             <li><a href="https://www.facebook.com/sharer/sharer.php?u={{url absolute=true}}" target="_blank">Facebook</a></li>
@@ -79,20 +79,19 @@
         </div>
     </div>
 
-
     <div class="container pt-5">
         <div class="row">
-            <div class="col-md-12">
-                <div id="disqus_thread"></div>
+            <div class="col-md-11 m-center">
+                <div id="disqus_thread" class="col-md-12"></div>
             </div>
         </div>
     </div>
 
 
     <div class="content-footer-wrapper">
-        <div class="container">
+        <div class="container col-md-12 center">
             <div class="row">
-                <div class="col-md-9 mx-auto">
+                <div class="col-md-11 m-center">
                     <h1 class="msg">Thanks for reading this whole articlse. <br>
                     Get the latest posts delivered right to your inbox</h1>
                     <div class="mx-auto">
@@ -102,9 +101,11 @@
             </div>
         </div>
     </div>
+
+    {{> "floating-header"}}
+
     {{/if}}
 {{/post}}
-
 
 
 {{#contentFor "scripts"}}

@@ -1,0 +1,7 @@
+{{#get "posts" filter="tags:[back-end, front-end]" include="tags"}}
+    {{#foreach posts}}
+        {{#has tag="back-end"}}
+            <div class="recent-title"><a href="{{url}}">{{title}}</a></div>
+        {{/has}}
+    {{/foreach}}
+{{/get}}
