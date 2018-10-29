@@ -17,7 +17,7 @@ $(function ($) {
     var social = document.querySelector('.soc.social');
     var nav = document.querySelector('.soc.nav');
 
-    var title = document.querySelector('.content-title');
+    var title = document.querySelector('.chapter-title');
 
     var lastScrollY = window.scrollY;
     var firstScrollY;

@@ -3,7 +3,7 @@ var headings;
 if(document.querySelectorAll)
     headings = document.querySelectorAll("h1,h2,h3,h4,h5,h6");
 else   // Otherwise, find the headings the hard way
-    headings = findHeadings(document.getElementsByClassName('content-header-wrapper'), []);
+    headings = findHeadings(document.getElementsByClassName('open-book'), []);
 
 // Recursively traverse the document body looking for headings
 function findHeadings(root, sects){
@@ -77,11 +77,11 @@ tocbot.init({
     // Smooth scrolling enabled.
     scrollSmooth: true,
     // Smooth scroll duration.
-    scrollSmoothDuration: 420,
+    scrollSmoothDuration: 100,
     // Callback for scroll end.
     scrollEndCallback: function (e) { },
     // Headings offset between the headings and the top of the document (this is meant for minor adjustments).
-    headingsOffset: 1,
+    headingsOffset: -80,
     // Timeout between events firing to make sure it's
     // not too rapid (for performance reasons).
     throttleTimeout: 50,

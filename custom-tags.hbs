@@ -1,5 +1,5 @@
-{{!< default}} 
-{{#post}} 
+{{!< default}}
+{{#post}}
     <div class="page-cover {{^if feature_image}}no-image{{/if}}" {{#if feature_image}}style="background-image: url({{feature_image}})"
         {{/if}}>
         <div class="container">
@@ -19,6 +19,7 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
+TEST {{@blog.url}}
 
                 <div class="tag-list">
                     {{#get "tags" include="count.posts"}}

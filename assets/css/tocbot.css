@@ -8,12 +8,12 @@
 }
 
 .toc > .toc-list li {
-    list-style: none
+    list-style: none;
 }
 
 .toc-list {
     margin: 0;
-    padding-left: 10px
+    padding-left: 10px;
 }
 
 a.toc-link {
@@ -37,20 +37,6 @@ a.toc-link {
 }
 
 .is-active-link {
-    font-weight: 700
-}
-
-.toc-link::before {
-    background-color: #f2F7fa;
-    content: ' ';
-    display: inline-block;
-    height: inherit;
-    right: 0;
-    margin-top: -1px;
-    position: fixed;
-    width: 8px;
-}
-
-.is-active-link::before {
-    background-color: #ffE6a1;
+    font-weight: 700;
+    background-color: inherit;
 }

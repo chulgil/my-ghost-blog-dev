@@ -1,24 +1,29 @@
 {{!< default}}
+
+
+<div class=" col-md-12 m-center">
+    <section class="open-book">
+        <header>
+            <h1>{{date}}</h1>
+            <h6></h6>
+        </header>
+
 {{#tag}}
-    <div class="page-cover {{^if feature_image}}no-image{{/if}}"
-    {{#if feature_image}}style="background-image: url({{feature_image}})"{{/if}}>
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="page-cover-text">
-                        <h2>{{name}}</h2>
-                        <p>{{description}}</p>
-                    </div>
-                </div>
-            </div>
+        <div class="page-cover {{^if feature_image}}no-image{{/if}}"
+        {{#if feature_image}}style="background-image: url({{feature_image}})"{{/if}}>
         </div>
-    </div>
+        <h2 class="chapter-title">{{name}}</h2>
 {{/tag}}
 
-<div class="container pt-5">
-    <div class="row">
-        <div class="col-md-10 mx-auto pt-5">
-            {{> "loop"}}
-        </div>
-    </div>
+        <article>
+        {{> "loop"}}
+        </article>
+        <footer>
+            <ol id="page-numbers">
+                <li></li>
+                <li></li>
+            </ol>
+        </footer>
+
+    </section>
 </div>

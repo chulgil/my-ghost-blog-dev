@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="{{ asset 'css/screen.css' }}">
     <link rel="stylesheet" href="{{ asset 'css/theme.css' }}">
     <link rel="stylesheet" href="{{ asset 'css/tocbot.css' }}">
+    <link rel="stylesheet" href="{{ asset 'css/book.css' }}">
+
     {{{block "styles"}}}
     {{ghost_head}}
 </head>
@@ -16,7 +18,7 @@
     <div class="site-wrapper">
 
         <div id="side-menu-toggle" class="side-menu-toggle site-left-x"></div>
-        <div class="site-left ">
+        <div class="site-left">
             {{> "side-nav"}}
         </div>
 
@@ -26,7 +28,7 @@
         </div>
     </div>
 
-    <footer class="site-footer">
+    <footer class="site-footer site-left-x">
         <p>{{@blog.title}} Minimal blogging</p>
     </footer>
     {{> "footer-scripts"}}

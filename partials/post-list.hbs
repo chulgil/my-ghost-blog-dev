@@ -1,7 +1,6 @@
-{{#get "posts" filter="tags:[back-end, front-end]" include="tags"}}
-    {{#foreach posts}}
-        {{#has tag="back-end"}}
-            <div class="recent-title"><a href="{{url}}">{{title}}</a></div>
-        {{/has}}
-    {{/foreach}}
-{{/get}}
+<li class="tag up">
+    <span class="title">
+        <a href="{{ url }}">{{ title }}</a>
+    </span>
+    <span class="number lo"> {{date format="DD MMMM YYYY"}}</span>
+</li>

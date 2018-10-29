@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /**
     -------------------------------------------
-    Name: Writter - Minimal ghost theme
+    Name: Vncodenavi - Minimal ghost theme
     -------------------------------------------
     Table of contents
     --------------------------
@@ -28,6 +28,8 @@
     - Author List
     - Single Author page
     - Responsive Style
+    - Floating Header
+    - TOC ( Table of Contents )
 */
 /**
     -------------------------------------------
@@ -68,6 +70,7 @@ body {
   color: #212529;
   text-align: left;
   background-color: #fff;
+  overflow-x: hidden;
 }
 
 [tabindex="-1"]:focus {
@@ -18549,6 +18552,14 @@ button,
   left: 0;
   z-index: 9;
 }
+.header-area .logo {
+  height: 40px;
+  padding-left: 5px;
+}
+.header-area .logo svg {
+  width: 3.5rem;
+}
+
 .header-area .logo a {
   display: inline-block;
 }
@@ -18898,12 +18909,13 @@ button,
   flex: 0 0 280px;
   flex-direction: column;
   float: left;
-  background-color: #f4f8fb;
+  background-color: #f4F8fb;
   position: fixed;
   width: 300px;
   height: 100%;
   transform: translateX(0);
   z-index: 800;
+  top:0;
 }
 .site-left-x {
   margin-left: 300px;
@@ -18924,11 +18936,17 @@ button,
     Side Menu
     -------------------------------------------
 */
-
 .side-content {
-  padding: 15px;
+  overflow-y: auto;
+  -ms-overflow-style: none;  // IE 10+
+  overflow: -moz-scrollbars-none;  // Firefox
 }
-
+.side-content li {
+  list-style: none;
+}
+.side-content::-webkit-scrollbar {
+  display: none;  // Safari and Chrome
+}
 .side-content .c-hero {
   position: absolute;
   bottom: 0%;
@@ -18938,15 +18956,77 @@ button,
   transform: translate(-50%,-50%);
   min-width: 75%;
 }
+.side-content .logo {
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
 
-.side-nav {
-  overflow-y: auto;
-  position: fixed;
-  top: 80px;
+.side-content .logo svg {
+  width: 7rem;
+}
+
+.side-content .wisdom {
+  font-family: Georgia;
+  font-style: italic;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.side-content .wisdom p {
+  margin:0;
+  font-size: 13px;
+  height: 100%;
+  color: #666666;
+  line-height: 1.2rem;
+}
+.side-content .wisdom span {
+  font-size: 11px;
+  color: darkgray;
+}
+
+
+.side-menu {
+  background-color: #f4F8fb;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in;
+  height: 100%;
+}
+
+.side-menu ul, .side-list ul {
+  padding-left:5%;
+  padding-right:5%;
+}
+
+.side-menu li {
+  height: 13px;
+  line-height: 13px;
+  padding: 16.5px 0;
+  width: 100%;
+}
+
+.side-menu li a {
+  display: inline-block;
+  margin-top: 11px;
+  padding: 0px 10px 0px 10px;
+  background: #f2F7fa;
+  color: gray;
+  font-size: 14px;
+}
+
+.side-list li {
+  display: flex;
+}
+
+.side-list li a {
+  overflow: hidden;
+  color: #2e2e2e;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 12px;
 }
 
 .side-menu-toggle {
-  border: 5px solid #f4f8fb;
+  border: 6px solid darkgray;
   border-radius: 4px;
   cursor: pointer;
   display: block;
@@ -18955,8 +19035,21 @@ button,
   left: -12px;
   top: 12px;
   width: 25px;
-  z-index: 999;
+  z-index: 777;
 }
+
+.side-menu li.nav-current {
+  border-bottom: 2px solid;
+
+}
+.side-menu li.nav-current a {
+  color: inherit;
+}
+
+.side-menu a span {
+  width: 35px;
+}
+
 
 /**
     -------------------------------------------
@@ -19497,6 +19590,28 @@ button,
 }
 .author-box .author_details .name {
   font-size: 18px;
+}
+
+.post-navigation-link {
+  overflow: hidden;
+  margin: 0;
+  font-size: 1rem;
+  line-height: 2.4rem;
+  font-weight: bold;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+}
+.post-navigation a:hover {
+  -webkit-transform: scale(1.20);
+  transform: scale(1.20);
+  transition: background-color 0.5s, -webkit-transform 0.5s ease-out;
+  transition: background-color 0.5s, transform 0.5s ease-out;
+  transition: background-color 0.5s, transform 0.5s ease-out, -webkit-transform 0.5s ease-out;
+}
+
+.post-navigation-link svg {
+  width: 6em;
 }
 
 .post-navigation i {
@@ -20213,7 +20328,6 @@ figure.kg-card.kg-gallery-card.kg-width-wide,
 */
 .table-contents {
   padding-top: 50px;
-
 }
 .table-contents li {
   position:relative;
@@ -20275,7 +20389,7 @@ figure.kg-card.kg-gallery-card.kg-width-wide,
 
 /**
     --------------------------------------
-        TOC
+        TOC Custom ( Table of Contents )
     --------------------------------------
 */
 .js-toc {
@@ -20283,7 +20397,6 @@ figure.kg-card.kg-gallery-card.kg-width-wide,
   font-size: 14px;
   overflow-y: auto;
   position: relative;
-  height: 600px;
 }
 
 .toc-list-item {
@@ -20291,34 +20404,3 @@ figure.kg-card.kg-gallery-card.kg-width-wide,
 }
 
 /*# sourceMappingURL=theme.css.map */
-/**
-    --------------------------------------
-        Default
-    --------------------------------------
-*/
-.ca {text-transform: capitalize;}
-.up {text-transform: uppercase;}
-.lo {text-transform: lowercase;}
-.va {font-variant: small-caps;}
-
-.line {
-  border-bottom-style: ridge;
-  border-bottom-width: 7px;
-  border-bottom-color: #f4f8fb;
-}
-.right {
-  text-align: right!important;
-  float: right!important;
-}
-.center {
-  text-align: center!important;
-}
-.left {
-  text-align: left!important;
-  float: left!important;
-}
-
-.m-center {
-  margin-left: auto!important;
-  margin-right: auto!important;
-}

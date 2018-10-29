@@ -1,53 +1,32 @@
 $(document).ready(function () {
-    /*-----------------------------
-        Featured Posts slider
-    -----------------------------*/
-    $('.featured-slider').owlCarousel({
-        center: true,
-        loop: true,
-        margin: 30,
-        responsiveClass: true,
-        dots: false,
-        nav: true,
-        stagePadding: 300,
-        navText: [
-            '<i class="arrow_left feture-post-arrow"></i>',
-            '<i class="arrow_right feture-post-arrow"></i>',
-        ],
-        responsive: {
-            0: {
-                items: 1,
-                stagePadding: 0,
-                center: false
-            },
-            577: {
-                items: 1,
-                stagePadding: 100,
-            },
-            1000: {
-                items: 1,
-            },
-        },
-    })
-
+ 
     /*-----------------------------
         Side menu
     -----------------------------*/
     $('.side-menu-toggle').on('click', function () {
-        $('#side-menu-toggle').toggleClass( "site-left-x",200);
-        $('#site-content').toggleClass( "site-left-x",200);
+        $('#side-menu-toggle , #site-content, .floating-header, .site-footer').toggleClass( "site-left-x",200);
         $('.site-left').toggle('slide','left',200);
-        $('.container').toggleClass('m-center');
-        $('.floating-header').toggleClass( "site-left-x",200);
+        $('.site-logo').toggle();
+        $('.container, .open-book').toggleClass('m-center');
+
     });
 
     /*-----------------------------
         Toc href target
     -----------------------------*/
+
     $('.toc-list-item a').on('click', function(e) {
         e.preventDefault();
         e.stopPropagation();
-        console.log('cccc');
+
+        // Remove active status
+        $('.toc-list li').removeClass('is-active-li');
+        $('.toc-list-item a').removeClass('is-active-link');
+
+        // Reset active status
+        $(this).parent().addClass('is-active-li');
+        $(this).addClass('is-active-link');
+
         var thisTarget = $(this).attr("href");
         $(window).scrollTop($(thisTarget).offset().top-80);
     });
